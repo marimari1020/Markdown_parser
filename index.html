@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Markdown Previewer</title>
+<link rel="stylesheet" type="text/css" href="mark_style.css">
+	
+<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.19/marked.min.js"></script>
+<script>
+	
+//Set input markedup texts
+	window.onload = function(){
+		var editorSource = document.querySelector('.editor .source');
+		var previewSource = document.querySelector('.preview .source');
+
+		//Converting from markup style to html 
+		var sync = function(){
+			var value = editorSource.value;
+			var md = marked(value);
+			previewSource.value = md;
+			console.log(md);
+						
+		};
+		editorSource.onblur = sync;
+		sync();		
+		
+	};
+	
+	
+	</script>
+</head>
+
+<body>
+
+
+<div class="editor">
+	<h2>Place markdown texts<h2>
+	<textarea class="source"># Hello, world!</textarea>
+
+	
+</div>
+
+<div class="preview">
+	<h2>Converted HTML<h2>
+		<textarea class="source"></textarea>
+	
+</div>
+
+
+
+</body>
+</html>
