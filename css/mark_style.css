@@ -1,0 +1,28 @@
+
+body {
+	padding: 2%;
+}
+h2 {
+	color: cadetblue;
+	font-size: 1.5em;
+}
+h3 {
+	color: cadetblue;
+	padding-top: 5%;
+}
+h4 {
+	color: cadetblue;
+		padding-top: 5%;
+}
+h1{
+		color: cornflowerblue;
+	font-size: 2em;
+	margin-bottom: 2%;
+}
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:focus,
+.nav-tabs > li.active > a:hover{
+  background-color: cornflowerblue !important;
+	color: white !important;
+
+}

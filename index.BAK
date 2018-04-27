@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Markdown Previewer</title>
+<link rel="stylesheet" type="text/css" href="mark_style.css">
+	
+<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.19/marked.min.js"></script>
+<script>
+	
+//Set input markedup texts
+	window.onload = function(){
+		var editorSource = document.querySelector('.editor .source');
+		var previewSource = document.querySelector('.preview .source');
+
+		//Converting from markup style to html 
+		var sync = function(){
+			var value = editorSource.value;
+			var md = marked(value);
+			previewSource.value = md;
+			console.log(md);
+			
+			
+			var showSource = document.querySelector('.preview .source');
+			var mdhtml;
+				mdhtml = document.getElementsByClassName("preview") ;
+			console.log(mdhtml);
+			
+			
+		};
+		editorSource.onblur = sync;
+		sync();	
+		
+		
+
+		
+	};
+	
+	
+	</script>
+</head>
+
+<body>
+
+
+<div class="editor">
+	<h2>markdown メモ<h2>
+	<textarea class="source"># Hello, world!</textarea>
+
+	
+</div>
+
+<div class="preview">
+	<h2>メモをHTMLに変換<h2>
+		<textarea class="source"></textarea>
+	
+</div>
+
+<div class="show">
+	<h2>HTMLのプレビュ<h2>
+		<textarea class="source"></textarea>
+	
+</div>
+
+</body>
+</html>

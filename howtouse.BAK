@@ -1,0 +1,75 @@
+<h3 id="-">段落</h3>
+<p>空行を追加して段落を分割します。</p>
+<p>これは段落です。2つの文があります。<b>[SPACE KEY]</b></p>
+<p>これは別の段落です。ここにも2つの文があります。<b>[SPACE KEY]</b></p>
+<h3 id="-">改行</h3>
+<p>強制的に改行したい場合は、行末に2つのスペースを挿入。</p>
+<h3 id="-">テキストの強調</h3>
+<p>* や　_ で文字を囲む。</p>
+<p><b>*</b>強調<b>*</b> もしくは <b>_</b>強調<b>_</b></p>
+<p><span style="color:blue;font-size:small;">ブラウザでの表示 :</span><em>強調</em> もしくは _強調_（斜体として表現されることが多い）</p>
+<p><b>**</b>強い強調<b>**</b> もしくは <b>__</b>強い強調<b>__</b></p>
+<p><span style="color:blue;font-size:small;">ブラウザでの表示 :</span><strong>強い強調</strong> もしくは <strong>強い強調</strong></p>
+<h3 id="-">コード</h3>
+<p>インラインコードは「<b>`</b>some code<b>`</b>」のようにバッククオート (U+0060) で囲む。</p>
+<p>複数行にまたがるコードは、タブもしくは4つ以上のスペースを行頭に書く。</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;1行目<br>&nbsp;&nbsp;&nbsp;&nbsp;2行目<br>&nbsp;&nbsp;&nbsp;&nbsp;3行目<br></p>
+
+<h3 id="-">リスト</h3>
+<p> <b>*</b>順序無しリストのアイテム
+<p> &nbsp;&nbsp;&nbsp;&nbsp;<b>*</b>サブアイテムはタブもしくは4つのスペースでインデントする</li>
+<p> <b>*</b>順序無しリストの別のアイテム
+<p> <b>1.</b>順序付きリストのアイテム
+<p> <b>2.</b>順序付きリストの別のアイテム</li>
+
+<p><span style="color:blue;font-size:small;">ブラウザでの表示 :</p>
+<ul>
+<li>順序無しリストのアイテム
+<ul>
+<li>サブアイテムはタブもしくは4つのスペースでインデントする</li>
+</li>
+</ul>
+
+<li>順序無しリストの別のアイテム
+</li></ul>
+<ol>
+<li>順序付きリストのアイテム
+</li>
+<li>順序付きリストの別のアイテム</li>
+</ol>
+
+
+<h3 id="-">見出し</h3>
+	<p>HTMLの見出しは、テキストの前に<b>&#39;#&#39;</b>を置く。</p>
+
+<b>#</b>レベル1の見出し
+<b>####</b>レベル4の見出し
+
+<p>また</p>
+<p>レベル1の見出し
+<div><span style="color:blue;font-size:small;">ブラウザでの表示 :</span>
+===============</div></p>
+<p>レベル2の見出し
+<div>
+<span style="color:blue;font-size:small;">ブラウザでの表示 :</span>
+---------------</div></p>
+<h3 id="-">引用</h3>
+
+<p><b>></b>このテキストは、HTMLのblockquote要素に囲まれます。
+blockquote要素はreflowableです。&quot;</p>
+<p>上記は次のようなHTMLに変換される。</p>
+
+<p><span style="color:blue;font-size:small;">ブラウザでの表示 :</span>
+  <p><blockquote>このテキストは、HTMLのblockquote要素に囲まれます。
+blockquote要素はreflowableです。</p></blockquote>
+
+<h3 id="-">リンク</h3>
+<p>リンクは次のように記述できる。</p>
+<p><b>[</b>リンクのアドレス<b>]</b><b>(</b>リンクのタイトル">リンクのテキスト<b>)</b></p>
+<p>脚注として段落外に含めることもできる。</p>
+<p><b>[</b>リンクのアドレス<b>]</b><b>(</b>リンクのタイトル">リンクのテキスト<b>)</b></p>
+<h3 id="-">水平線</h3>
+<p>1行の中に、3つ以上のハイフンやアスタリスク・アンダースコアだけを並べると水平線が作られる。</p>
+<p><b>*****</b></p>
+<p><span style="color:blue;font-size:small;">ブラウザでの表示 :</span>  -------------</p>
+

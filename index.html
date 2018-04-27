@@ -1,52 +1,87 @@
 <!doctype html>
-<html>
+<html lang="en">
 <head>
-<meta charset="utf-8">
 <title>Markdown Previewer</title>
-<link rel="stylesheet" type="text/css" href="mark_style.css">
-	
-<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.19/marked.min.js"></script>
-<script>
-	
-//Set input markedup texts
-	window.onload = function(){
-		var editorSource = document.querySelector('.editor .source');
-		var previewSource = document.querySelector('.preview .source');
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
+<!-- Bootstrap & jQuery-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<!-- Other CSS and JS files-->
+<link rel="stylesheet" type="text/css" href="css/mark_style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.19/marked.min.js"></script>
+<script >	
+	$(function() {
+		$("#howto").load("howtouse.html");
+		console.log($("#howto").load("http://www.exdesign63.com/howtouse.html"));
+	});
+</script>
+<script>
+
+//Set input markedup texts	
+	window.onload = function(){
+		var editorSource = document.querySelector('#editor');
 		//Converting from markup style to html 
+		var convertedSource = document.querySelector('#converted ');
+
 		var sync = function(){
 			var value = editorSource.value;
-			var md = marked(value);
-			previewSource.value = md;
-			console.log(md);
-						
+			var md = marked(value);		
+			var convertedSource = document.getElementById('converted').value = md;
+			//Preview in browser 
+			var previewSource = $('#preview').html(md);
 		};
 		editorSource.onblur = sync;
-		sync();		
-		
+		sync();	
+
 	};
-	
-	
+
 	</script>
 </head>
 
 <body>
 
+<h1>Markdown Editor</h1>
+<div class="container">
 
-<div class="editor">
-	<h2>Place markdown texts<h2>
-	<textarea class="source"># Hello, world!</textarea>
+	<div class="row">
+		<ul class="nav nav-tabs">
+  			<li class="active"><a data-toggle="tab" href="#home">Editor and Preview</a></li>
+  			<li><a data-toggle="tab" href="#menu1">Converted HTML</a></li>
+ 			<li><a data-toggle="tab" href="#menu2">How to use</a></li>
+		</ul>
 
-	
-</div>
-
-<div class="preview">
-	<h2>Converted HTML<h2>
-		<textarea class="source"></textarea>
-	
-</div>
-
-
-
+		<div class="tab-content">
+ 		<!--Home Input & Layout Preview-->
+  			<div id="home" class="tab-pane in active">
+  				<div class=" col-sm-6 form-group shadow-textarea" >
+					<h2>Editor</h2>
+					<textarea id="editor"  class="form-control" rows="20" placeholder="Write something here..."></textarea>
+	 	  		</div>
+ 		 		<div class="col-sm-6" >
+					<h2>HTML Preview</h2>
+					<div>
+					<div id="preview"></div>
+						</div>
+			 	</div>
+		 	 </div>
+		<!--Menu1 Converted HTML-->
+		 	<div id="menu1" class="tab-pane">
+		 		<div class="form-group shadow-textarea">
+					<h2>HTML</h2>
+					<textarea id="converted"  class="form-control" rows="20"></textarea>
+				</div>
+			</div>
+		<!--Menu２ How to use-->
+  			<div id="menu2" class="tab-pane">
+				<h2>使い方</h2>
+				<div id='howto' class="col-sm-6"></div>
+			</div>
+		</div><!--class="tab-content"-->
+	</div><!--class=row"-->
+</div> <!-- End of class="container" -->
 </body>
 </html>
