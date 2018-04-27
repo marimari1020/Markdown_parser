@@ -13,12 +13,7 @@
 <!-- Other CSS and JS files-->
 <link rel="stylesheet" type="text/css" href="css/mark_style.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.19/marked.min.js"></script>
-<script >	
-	$(function() {
-		$("#howto").load("howtouse.html");
-		console.log($("#howto").load("http://www.exdesign63.com/howtouse.html"));
-	});
-</script>
+
 <script>
 
 //Set input markedup texts	
@@ -36,6 +31,10 @@
 		};
 		editorSource.onblur = sync;
 		sync();	
+//Loading "howtouse.html" into Howto use tab
+		$("#howto").load("howtouse.html");
+		console.log($("#howto").load("http://www.exdesign63.com/howtouse.html"));
+		
 
 	};
 
